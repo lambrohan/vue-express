@@ -8,9 +8,9 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/status',(req,res)=>{
+app.get('/pay',(req,res)=>{
   res.send({
-    message:'server working'
+    message:'making payment'
   })
 })
 
