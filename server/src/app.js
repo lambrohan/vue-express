@@ -8,9 +8,10 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/pay',(req,res)=>{
+app.post('/pay',(req,res)=>{
   res.send({
-    message:'making payment'
+    message:'making payment',
+    data:req.body.product
   })
 })
 

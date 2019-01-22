@@ -1,7 +1,7 @@
 import Api from './api';
 
 export default {
-  createOrder(){
+  createOrder(payload){
     return Api().post('pay',payload)
  } 
 }

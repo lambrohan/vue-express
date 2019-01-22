@@ -5,18 +5,29 @@
      class="text-field"
       label="Amount"
       outline
+      v-model="price"
       >
     </v-text-field>
-    <v-btn style="margin-top:3rem" color="info">Place Order</v-btn>
+    <v-btn @click="pay(price)" style="margin-top:3rem" color="info">Place Order</v-btn>
     </div>
 </template>
 
 <script>
-
+  import OrderService from '../services/OrderService';
   export default {
-    components: {
-      
-    }
+   data(){
+     return{
+       price:''
+     }
+   },
+   methods:{
+     async pay(price){
+      const response = await OrderService.createOrder(price);
+      console.log(response.data);
+     }
+
+     
+   }
   }
 </script>
 <style>
